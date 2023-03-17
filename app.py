@@ -12,8 +12,5 @@ entries = []
 
 @app.route("/")
 def hello():
-    entries = [(
-                entry['content'] , entry['date']
-
-        ) for entry in app.db.entries.find({})]
-    return render_template("hello.html"  , entries=entries)
+   
+    return render_template("hello.html"  , entries=app.db.entries.find({}))
